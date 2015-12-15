@@ -5,6 +5,9 @@
 cssg
 
 	counter
+        counter_label
+        counter_buttons
+            <button> +
 
 */
 
@@ -19,6 +22,18 @@ cssg
 
 
 .counter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    }
+
+.counter_label {
+
+    }
+
+.counter_buttons {
 
     }
 
