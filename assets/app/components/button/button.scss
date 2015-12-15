@@ -1,0 +1,114 @@
+/* Button
+---------------------------------------------------------------------------------- */
+
+/*
+cssg
+
+	button
+
+*/
+
+
+/* Vars
+-------------------------------------------------- */
+
+@import "../../../css/variables";
+
+$button-top: #1cdd0b;
+$button-bot: #2cb11f;
+$button-border-top: $c-high;
+$button-border-bot: $c-brand-dark;
+$button-height: $fs-s * 2;
+$button-width: $button-height;
+$button-rad: $rad-normal;
+
+$button-height-mini: $fs-s * 1.5;
+$button-width-mini: $button-height-mini;
+
+/* /Vars */
+
+
+/* Main
+-------------------------------------------------- */
+
+.button {
+    position: relative;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 $grid-2;
+    min-width: $button-width;
+    height: $button-height;
+
+    cursor: pointer;
+    white-space: nowrap; // IE multiple words bug
+    overflow: visible;
+
+    border-radius: $button-rad;
+
+    border: 0 none;
+    //border: 1px solid transparent;
+    //border-top-color: $button-border-top;
+    //border-bottom-color: $button-border-bot;
+
+    font: normal #{$fs-s}/#{$button-height} $ff-main;
+    color: $c-inv;
+    text-shadow: 0 1px 0 #478f0b;
+    background: $button-top;
+    background: linear-gradient($button-top, $button-bot);
+
+    outline: none;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: .1ex;
+
+    transition: background .2s ease;
+
+    &:hover {
+        color: $c-inv;
+        background: $button-top;
+        background: linear-gradient($button-top, $button-bot);
+        }
+
+    &:focus {
+        box-shadow: $sh-focus;
+        }
+
+    &:active {
+        transform: translateY(1px) scale(.95);
+        box-shadow: none;
+        }
+    }
+
+a.button,
+span.button,
+div.button {
+    display: inline-block;
+    vertical-align: bottom;
+
+    text-decoration: none;
+    }
+
+input.button,
+button.button {
+    -webkit-appearance: none; // remove OS-native styling
+    }
+
+/* /Main */
+
+
+/* Mini
+-------------------------------------------------- */
+
+.button__mini {
+    padding: 0;
+    min-width: $button-width-mini;
+    height: $button-height-mini;
+
+    line-height: $button-height-mini;
+    }
+
+/* /Mini */
+
+/* /Button
+---------------------------------------------------------------------------------- */
