@@ -1,6 +1,7 @@
-//
-// logic
-//
+/**
+ * Counter
+ *
+ */
 
 const counter = (state = 0, action = null) => {
     switch (action.type) {
