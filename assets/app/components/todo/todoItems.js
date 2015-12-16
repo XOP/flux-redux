@@ -26,6 +26,7 @@ const todo = (state, action) => {
                     completed: !state.completed
                 });
             }
+            break;
 
         default:
             return state;
@@ -39,7 +40,7 @@ const todo = (state, action) => {
  * @returns {*}
  */
 const todoItems = (state = [], action = {}) => {
-    switch(action.type) {
+    switch (action.type) {
         case 'ADD_TODO':
             return state.concat(todo(state, action));
 

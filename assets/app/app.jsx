@@ -6,7 +6,7 @@
 import 'normalize.css/normalize.css';
 import './app.scss';
 
-import Counter from 'components/counter/counter';
+import Todo from 'components/todo/todo';
 
 
 module.exports = React.createClass({
@@ -33,7 +33,7 @@ module.exports = React.createClass({
         return (
             <div className="main">
                 <div className="container">
-                    <Counter />
+                    <Todo />
                 </div>
             </div>
         );

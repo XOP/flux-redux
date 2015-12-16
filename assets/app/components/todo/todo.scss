@@ -5,6 +5,12 @@
 cssg
 
     todo
+        todo_input
+            input
+            <button>
+
+        todo_list
+            todo_item *
 
 */
 
@@ -20,6 +26,32 @@ cssg
 .todo {
 
 	}
+
+.todo_input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    & > input, button {
+        flex: 1 0 auto;
+        max-width: 44%;
+        }
+    }
+
+.todo_list {
+    margin-top: $grid-2;
+    }
+
+.todo_item {
+    padding: $grid;
+    border: 1px solid $c-lighter;
+    border-radius: $rad-normal;
+
+    & + & {
+        margin-top: $grid;
+        }
+    }
 
 /* /Todos
 ---------------------------------------------------------------------------------- */

@@ -4,6 +4,6 @@
  */
 
 import todoApp from '../components/todo/todoApp';
-import Redux, {createStore} from 'redux';
+import {createStore} from 'redux';
 
 export default createStore(todoApp);

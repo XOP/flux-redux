@@ -13,18 +13,20 @@ import todoVisFilter from './todoVisFilter';
 //
 // combining reducers
 
-//const todoApp = (state = {}, action = {}) => {
-//    return {
-//        todos: todoItems(
-//            state.todos,
-//            action
-//        ),
-//        visibilityFilter: todoVisFilter(
-//            state.visibilityFilter,
-//            action
-//        )
-//    };
-//};
+/*
+const todoApp = (state = {}, action = {}) => {
+    return {
+        todos: todoItems(
+            state.todos,
+            action
+        ),
+        visibilityFilter: todoVisFilter(
+            state.visibilityFilter,
+            action
+        )
+    };
+};
+*/
 
 const todoApp = combineReducers({
     todoItems,      // todoItems: todoItems

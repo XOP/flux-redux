@@ -9,10 +9,10 @@ import Store from 'stores/counterStore';
 import Button from 'components/button/button';
 
 /**
- * Counter state update
+ * State update
  * @returns {{value: (*|any)}}
  */
-function counterState() {
+function updateState() {
     return {
         value: Store.getState()
     };
@@ -48,7 +48,7 @@ module.exports = React.createClass({
     },
 
     _onChange: function() {
-        this.setState(counterState());
+        this.setState(updateState());
     },
 
     render: function() {
