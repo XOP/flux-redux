@@ -3,7 +3,7 @@
 //
 
 import expect, { createSpy, spyOn, isSpy } from 'expect';
-import counter from './counter';
+import counter from './counterApp';
 
 
 console.log('Testing Counter...');

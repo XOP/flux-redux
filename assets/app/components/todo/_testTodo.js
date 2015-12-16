@@ -3,9 +3,8 @@
 //
 
 import expect, { createSpy, spyOn, isSpy } from 'expect';
-import deepFreeze from 'deep-freeze';
 
-import todos from './todos';
+import todoItems from './todoItems';
 
 
 //
@@ -13,6 +12,8 @@ import todos from './todos';
 
 const testAddTodo = () => {
     console.log('Testing Todo Add...');
+
+    const deepFreeze = require('deep-freeze');
 
     const stateBefore = [];
     const action = {
@@ -28,11 +29,11 @@ const testAddTodo = () => {
         }
     ];
 
-    //deepFreeze(stateBefore);
-    //deepFreeze(action);
+    deepFreeze(stateBefore);
+    deepFreeze(action);
 
     expect(
-        todos(stateBefore, action)
+        todoItems(stateBefore, action)
     ).toEqual(stateAfter);
 
     console.log('√ Passed!');
@@ -45,7 +46,9 @@ testAddTodo();
 // toggling test
 
 const testToggleTodo = () => {
-    console.log('Testing Todo Toggle...');
+    console.log('Testing Todo Toggle...')
+
+    const deepFreeze = require('deep-freeze');
 
     const stateBefore = [
         {
@@ -80,7 +83,7 @@ const testToggleTodo = () => {
     deepFreeze(action);
 
     expect(
-        todos(stateBefore, action)
+        todoItems(stateBefore, action)
     ).toEqual(stateAfter);
 
     console.log('√ Passed!');

@@ -38,6 +38,14 @@ todoStore.dispatch({
     id: 0
 });
 console.log(todoStore.getState());
-console.log(line);
 
+console.log(line);
+console.log('dispatching SET_VISIBILITY_FILTER');
+todoStore.dispatch({
+    type: 'SET_VISIBILITY_FILTER',
+    filter: 'SHOW_COMPLETED'
+});
+console.log(todoStore.getState());
+
+console.log(line);
 console.log('√ Finished!');

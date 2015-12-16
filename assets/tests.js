@@ -3,8 +3,8 @@
  *
  */
 
-import testCounter from './app/components/counter/test';
+import testCounter from './app/components/counter/_testCounter';
 
-import testToggle from './app/components/todo/test';
+import testToggle from './app/components/todo/_testTodo';
 
-import testStores from './app/stores/test';
+import testStores from './app/stores/_testStores';

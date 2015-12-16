@@ -6,7 +6,7 @@
 import 'normalize.css/normalize.css';
 import './app.scss';
 
-import Counter from 'components/counter/index';
+import Counter from 'components/counter/counter';
 
 
 module.exports = React.createClass({

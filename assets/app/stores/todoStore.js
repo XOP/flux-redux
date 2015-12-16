@@ -1,9 +1,9 @@
 /**
- * Todo Store
+ * Todos Store
  *
  */
 
-import todos from '../components/todo/todos';
+import todoApp from '../components/todo/todoApp';
 import Redux, {createStore} from 'redux';
 
-export default createStore(todos);
+export default createStore(todoApp);

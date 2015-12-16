@@ -5,12 +5,13 @@
 
 import './counter.scss';
 
-import counter from './counter';
-import Store from './store';
-
+import Store from 'stores/counterStore';
 import Button from 'components/button/button';
 
-
+/**
+ * Counter state update
+ * @returns {{value: (*|any)}}
+ */
 function counterState() {
     return {
         value: Store.getState()

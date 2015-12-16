@@ -4,7 +4,7 @@
  */
 
 /**
- * Todo switcher
+ * Todos switcher
  * @param state
  * @param action
  * @returns {*}
@@ -38,7 +38,7 @@ const todo = (state, action) => {
  * @param action
  * @returns {*}
  */
-const todos = (state = [], action = {}) => {
+const todoItems = (state = [], action = {}) => {
     switch(action.type) {
         case 'ADD_TODO':
             return state.concat(todo(state, action));
@@ -51,4 +51,4 @@ const todos = (state = [], action = {}) => {
     }
 };
 
-export default todos;
+export default todoItems;

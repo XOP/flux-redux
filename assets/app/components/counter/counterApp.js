@@ -1,5 +1,5 @@
 /**
- * Counter
+ * Counter application
  *
  */
 
