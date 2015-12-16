@@ -6,6 +6,7 @@
 import './todo.scss';
 
 import Store from 'stores/todoStore';
+import TodoItem from './todoItem';
 import Button from 'components/button/button';
 
 
@@ -16,7 +17,7 @@ let todoId = 0;
  * @returns {number}
  */
 function getId() {
-    return todoId++;
+    return todoId += 1;
 }
 
 /**
@@ -76,6 +77,7 @@ module.exports = React.createClass({
                     <input
                         className="input"
                         onChange={this.inputText}
+                        placeholder="Add new todo"
                         ref="todoTextInput"
                         type="text"
                         value={this.state.todoText}
@@ -87,12 +89,12 @@ module.exports = React.createClass({
                 </div>
                 <div className="todo_list">
                     {this.state.todoItems.map(todo =>
-                        <div
-                            className="todo_item"
+                        <TodoItem
+                            completed={todo.completed}
+                            id={todo.id}
                             key={todo.id}
-                            >
-                            {todo.text}
-                        </div>
+                            text={todo.text}
+                            />
                     )}
                 </div>
             </div>

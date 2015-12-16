@@ -43,15 +43,35 @@ cssg
     margin-top: $grid-2;
     }
 
+
+/* Item
+-------------------------------------------------- */
+
 .todo_item {
     padding: $grid;
     border: 1px solid $c-lighter;
     border-radius: $rad-normal;
 
+    cursor: pointer;
+    user-select: none;
+
+    &:hover,
+    &:focus {
+        background: $c-lightest;
+        }
+
     & + & {
         margin-top: $grid;
         }
+
+    &.__completed {
+        color: $c-lighter;
+        border-color: $c-lightest;
+        text-decoration: line-through;
+        }
     }
+
+/* /Item */
 
 /* /Todos
 ---------------------------------------------------------------------------------- */
