@@ -1,6 +1,6 @@
 {
   "name": "flux-redux",
-  "version": "0.5.5",
+  "version": "0.6.0",
   "description": "Redux research example",
   "main": "assets/app/index.js",
   "repository": {

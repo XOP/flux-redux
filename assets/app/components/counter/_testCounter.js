@@ -1,6 +1,7 @@
-//
-// tests
-//
+/**
+ * Test counter
+ *
+ */
 
 import expect, { createSpy, spyOn, isSpy } from 'expect';
 import counter from './counterApp';

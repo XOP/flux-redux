@@ -1,6 +1,7 @@
-//
-// tests
-//
+/**
+ * Test todos
+ *
+ */
 
 import expect, { createSpy, spyOn, isSpy } from 'expect';
 
