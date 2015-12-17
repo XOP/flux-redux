@@ -46,7 +46,7 @@ testAddTodo();
 // toggling test
 
 const testToggleTodo = () => {
-    console.log('Testing Todo Toggle...')
+    console.log('Testing Todo Toggle...');
 
     const deepFreeze = require('deep-freeze');
 

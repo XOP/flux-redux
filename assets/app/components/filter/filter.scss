@@ -1,0 +1,58 @@
+/* Filter
+---------------------------------------------------------------------------------- */
+
+/*
+cssg
+
+	filter
+	    filter_i +
+	        filter_a
+
+*/
+
+
+/* Vars
+-------------------------------------------------- */
+
+@import "../../../css/variables";
+
+
+/* /Vars */
+
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: space-around;
+
+    font-size: $fs-normal;
+    line-height: $lh-normal;
+    }
+
+.filter_i {
+    flex: 1 0 auto;
+    text-align: center;
+
+    user-select: none;
+    }
+
+.filter_a {
+    color: $c-lighter;
+    border-bottom: .1em dotted;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: $c-base;
+        }
+
+    &.__active {
+        color: $c-brand-dark;
+        border: none;
+        cursor: default;
+        }
+    }
+
+/* /Filter
+---------------------------------------------------------------------------------- */

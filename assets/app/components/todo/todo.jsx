@@ -6,8 +6,11 @@
 import './todo.scss';
 
 import Store from 'stores/todoStore';
+import {getVisibleItems} from './todoVisFilter';
+
 import TodoItem from './todoItem';
 import Button from 'components/button/button';
+import Filter from 'components/filter/filter';
 
 
 let todoId = 0;
@@ -25,10 +28,16 @@ function getId() {
  * @returns {{value: (*|any)}}
  */
 function updateState() {
+    // filter visible items using helper function
+    const todoItems = getVisibleItems(
+        Store.getState().todoItems,
+        Store.getState().todoVisFilter
+    );
+
     return {
-        todoItems: Store.getState().todoItems,
+        todoItems: todoItems,
         todoId: getId(),
-        todoText: '' // clear the input value
+        todoText: '' // clear the input value on enter
     };
 }
 
@@ -96,6 +105,16 @@ module.exports = React.createClass({
                             text={todo.text}
                             />
                     )}
+                </div>
+                <div className="todo_filter">
+                    <Filter>
+                        {
+                            [
+                                ['All', 'Completed', 'Active'],
+                                'All'
+                            ]
+                        }
+                    </Filter>
                 </div>
             </div>
         );

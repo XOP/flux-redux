@@ -12,6 +12,9 @@ cssg
         todo_list
             todo_item *
 
+        todo_filter
+            <filter>
+
 */
 
 
@@ -40,9 +43,12 @@ cssg
     }
 
 .todo_list {
-    margin-top: $grid-2;
+    margin: $grid-2 0;
     }
 
+.todo_filter {
+
+    }
 
 /* Item
 -------------------------------------------------- */
