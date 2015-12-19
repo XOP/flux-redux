@@ -6,30 +6,32 @@
 import expect, { createSpy, spyOn, isSpy } from 'expect';
 import counter from './counterApp';
 
+import {INCREMENT, DECREMENT} from '../../constants/appConstants';
+
 
 console.log('Testing Counter...');
 
 expect(
     counter(0, {
-        type: 'INCREMENT'
+        type: INCREMENT
     })
 ).toEqual(1);
 
 expect(
     counter(1, {
-        type: 'INCREMENT'
+        type: INCREMENT
     })
 ).toEqual(2);
 
 expect(
     counter(2, {
-        type: 'DECREMENT'
+        type: DECREMENT
     })
 ).toEqual(1);
 
 expect(
     counter(1, {
-        type: 'DECREMENT'
+        type: DECREMENT
     })
 ).toEqual(0);
 

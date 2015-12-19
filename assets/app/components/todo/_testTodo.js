@@ -5,6 +5,8 @@
 
 import expect, { createSpy, spyOn, isSpy } from 'expect';
 
+import {INCREMENT, DECREMENT} from '../../constants/appConstants';
+
 import todoItems from './todoItems';
 
 

@@ -5,8 +5,11 @@
 
 import './counter.scss';
 
+import {INCREMENT, DECREMENT} from 'constants/appConstants';
+
 import Store from 'stores/counterStore';
 import Button from 'components/button/button';
+
 
 /**
  * State update
@@ -37,13 +40,13 @@ module.exports = React.createClass({
 
     onIncrement: function() {
         Store.dispatch({
-            type: 'INCREMENT'
+            type: INCREMENT
         });
     },
 
     onDecrement: function() {
         Store.dispatch({
-            type: 'DECREMENT'
+            type: DECREMENT
         });
     },
 

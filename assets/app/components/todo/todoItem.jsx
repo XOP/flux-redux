@@ -7,6 +7,8 @@ import './todo.scss';
 
 import Store from 'stores/todoStore';
 
+import {TOGGLE_TODO} from '../../constants/appConstants';
+
 
 module.exports = React.createClass({
 
@@ -24,7 +26,7 @@ module.exports = React.createClass({
 
     toggleItem: function() {
         Store.dispatch({
-            type: 'TOGGLE_TODO',
+            type: TOGGLE_TODO,
             id: this.props.id
         });
     },

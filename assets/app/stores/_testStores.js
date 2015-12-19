@@ -5,6 +5,11 @@
 
 import todoStore from './todoStore';
 
+import {
+    ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER,
+    SHOW_ACTIVE, SHOW_ALL, SHOW_COMPLETED
+} from '../constants/appConstants';
+
 const line = '------------------------------------------------';
 
 
@@ -16,7 +21,7 @@ console.log(todoStore.getState());
 console.log(line);
 console.log('dispatching ADD_TODO');
 todoStore.dispatch({
-    type: 'ADD_TODO',
+    type: ADD_TODO,
     id: 0,
     text: '#1'
 });
@@ -25,7 +30,7 @@ console.log(todoStore.getState());
 console.log(line);
 console.log('dispatching ADD_TODO');
 todoStore.dispatch({
-    type: 'ADD_TODO',
+    type: ADD_TODO,
     id: 1,
     text: '#2'
 });
@@ -34,7 +39,7 @@ console.log(todoStore.getState());
 console.log(line);
 console.log('dispatching TOGGLE_TODO');
 todoStore.dispatch({
-    type: 'TOGGLE_TODO',
+    type: TOGGLE_TODO,
     id: 0
 });
 console.log(todoStore.getState());
@@ -42,8 +47,8 @@ console.log(todoStore.getState());
 console.log(line);
 console.log('dispatching SET_VISIBILITY_FILTER');
 todoStore.dispatch({
-    type: 'SET_VISIBILITY_FILTER',
-    filter: 'SHOW_COMPLETED'
+    type: SET_VISIBILITY_FILTER,
+    filter: SHOW_COMPLETED
 });
 console.log(todoStore.getState());
 

@@ -8,6 +8,8 @@ import './todo.scss';
 import Store from 'stores/todoStore';
 import {getVisibleItems} from './todoVisFilter';
 
+import {ADD_TODO} from '../../constants/appConstants';
+
 import TodoItem from './todoItem';
 import Button from 'components/button/button';
 import Filter from 'components/filter/filter';
@@ -57,10 +59,14 @@ module.exports = React.createClass({
         Store.subscribe(this._onChange);
     },
 
+    componentWillUnmount: function() {
+        Store.unsubscribe(this._onChange);
+    },
+
     addNewItem: function() {
         if (this.refs.todoTextInput.value !== '') {
             Store.dispatch({
-                type: 'ADD_TODO',
+                type: ADD_TODO,
                 text: this.state.todoText,
                 id: this.state.todoId
             });

@@ -5,6 +5,8 @@
 
 import './filter.scss';
 
+import {SET_VISIBILITY_FILTER} from 'constants/appConstants';
+
 import Store from 'stores/todoStore';
 
 
@@ -43,7 +45,7 @@ module.exports = React.createClass({
         },
             function() {
                 Store.dispatch({
-                    type: 'SET_VISIBILITY_FILTER',
+                    type: SET_VISIBILITY_FILTER,
                     filter: action
                 });
             }
