@@ -5,17 +5,14 @@
 
 import './filter.scss';
 
-import {SET_VISIBILITY_FILTER} from 'constants/appConstants';
-
-import Store from 'stores/todoStore';
-
 
 module.exports = React.createClass({
 
     displayName: 'Filter',
 
     propTypes: {
-        children: React.PropTypes.array
+        children: React.PropTypes.array,
+        onFilterClick: React.PropTypes.func
     },
 
     getInitialState: function() {
@@ -44,11 +41,8 @@ module.exports = React.createClass({
             active: parseInt(evt.target.dataset.key, 10)
         },
             function() {
-                Store.dispatch({
-                    type: SET_VISIBILITY_FILTER,
-                    filter: action
-                });
-            }
+                this.props.onFilterClick(action);
+            }.bind(this)
         );
     },
 

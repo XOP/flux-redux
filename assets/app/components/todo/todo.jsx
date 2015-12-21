@@ -8,11 +8,11 @@ import './todo.scss';
 import Store from 'stores/todoStore';
 import {getVisibleItems} from './todoVisFilter';
 
-import {ADD_TODO, TOGGLE_TODO} from '../../constants/appConstants';
+import {ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER} from '../../constants/appConstants';
 
 import TodoInput from './todoInput';
 import TodoList from './todoList';
-import Filter from 'components/filter/filter';
+import TodoFilter from './todoFilter';
 
 
 let todoId = 0;
@@ -77,6 +77,13 @@ module.exports = React.createClass({
         });
     },
 
+    filterItems: function(action) {
+        Store.dispatch({
+            type: SET_VISIBILITY_FILTER,
+            filter: action
+        });
+    },
+
     _onChange: function() {
         this.setState(updateState());
     },
@@ -91,16 +98,16 @@ module.exports = React.createClass({
                     onTodoClick={this.toggleItem}
                     todoItems={this.state.todoItems}
                     />
-                <div className="todo_filter">
-                    <Filter>
-                        {
-                            [
-                                ['All', 'Completed', 'Active'],
-                                'All'
-                            ]
-                        }
-                    </Filter>
-                </div>
+                <TodoFilter
+                    onFilterClick={this.filterItems}
+                    >
+                    {
+                        [
+                            ['All', 'Completed', 'Active'],
+                            'All'
+                        ]
+                    }
+                </TodoFilter>
             </div>
         );
     }
