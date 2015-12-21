@@ -8,10 +8,10 @@ import './todo.scss';
 import Store from 'stores/todoStore';
 import {getVisibleItems} from './todoVisFilter';
 
-import {ADD_TODO} from '../../constants/appConstants';
+import {ADD_TODO, TOGGLE_TODO} from '../../constants/appConstants';
 
-import TodoItem from './todoItem';
-import Button from 'components/button/button';
+import TodoInput from './todoInput';
+import TodoList from './todoList';
 import Filter from 'components/filter/filter';
 
 
@@ -38,8 +38,7 @@ function updateState() {
 
     return {
         todoItems: todoItems,
-        todoId: getId(),
-        todoText: '' // clear the input value on enter
+        todoId: getId()
     };
 }
 
@@ -63,21 +62,18 @@ module.exports = React.createClass({
         Store.unsubscribe(this._onChange);
     },
 
-    addNewItem: function() {
-        if (this.refs.todoTextInput.value !== '') {
-            Store.dispatch({
-                type: ADD_TODO,
-                text: this.state.todoText,
-                id: this.state.todoId
-            });
-        } else {
-            console.info('Please input text in todo field!');
-        }
+    addNewItem: function(text) {
+        Store.dispatch({
+            type: ADD_TODO,
+            text: text,
+            id: this.state.todoId
+        });
     },
 
-    inputText: function(evt) {
-        this.setState({
-            todoText: evt.target.value
+    toggleItem: function(id) {
+        Store.dispatch({
+            type: TOGGLE_TODO,
+            id: id
         });
     },
 
@@ -88,30 +84,13 @@ module.exports = React.createClass({
     render: function() {
         return (
             <div className="todo">
-                <div className="todo_input">
-                    <input
-                        className="input"
-                        onChange={this.inputText}
-                        placeholder="Add new todo"
-                        ref="todoTextInput"
-                        type="text"
-                        value={this.state.todoText}
-                        />
-                    <Button
-                        label="Add ToDo"
-                        onClick={this.addNewItem}
-                        />
-                </div>
-                <div className="todo_list">
-                    {this.state.todoItems.map(todo =>
-                        <TodoItem
-                            completed={todo.completed}
-                            id={todo.id}
-                            key={todo.id}
-                            text={todo.text}
-                            />
-                    )}
-                </div>
+                <TodoInput
+                    onButtonClick={this.addNewItem}
+                    />
+                <TodoList
+                    onTodoClick={this.toggleItem}
+                    todoItems={this.state.todoItems}
+                    />
                 <div className="todo_filter">
                     <Filter>
                         {

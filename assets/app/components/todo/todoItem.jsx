@@ -3,12 +3,6 @@
  *
  */
 
-import './todo.scss';
-
-import Store from 'stores/todoStore';
-
-import {TOGGLE_TODO} from '../../constants/appConstants';
-
 
 module.exports = React.createClass({
 
@@ -17,18 +11,8 @@ module.exports = React.createClass({
     propTypes: {
         completed: React.PropTypes.bool,
         id: React.PropTypes.number,
+        onClick: React.PropTypes.func,
         text: React.PropTypes.string
-    },
-
-    getInitialState: function() {
-        return {};
-    },
-
-    toggleItem: function() {
-        Store.dispatch({
-            type: TOGGLE_TODO,
-            id: this.props.id
-        });
     },
 
     render: function() {
@@ -41,7 +25,8 @@ module.exports = React.createClass({
         return (
             <div
                 className={klass}
-                onClick={this.toggleItem}
+                data-id={this.props.id}
+                onClick={this.props.onClick}
                 >
                 {this.props.text}
             </div>
